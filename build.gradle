@@ -48,6 +48,9 @@ tasks.withType(JavaCompile) {
     options.compilerArgs << "-Xlint:all"
 }
 
+/* publish on release */
+tasks.release.dependsOn tasks.publish
+
 /* project contacts */
 contacts {
     'charkins@pobox.com' {
