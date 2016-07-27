@@ -1,0 +1,66 @@
+/*
+ * xdgpaths
+ *
+ * Copyright 2016 Casey Harkins.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+plugins {
+    /* project contacts, build info and javadoc and sources jars */
+    id 'nebula.project' version '3.2.1'
+
+    /* semantic versioning from git tags */
+    id 'nebula.nebula-release' version '4.0.1'
+
+    /* publishing to maven repository */
+    id 'nebula.maven-publish' version '4.8.1'
+
+    /* license header */
+    id 'com.github.hierynomus.license' version '0.11.0'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group='org.tuxfoo'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+/* enable all java compiler warnings */
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:all"
+}
+
+/* project contacts */
+contacts {
+    'charkins@pobox.com' {
+        moniker 'Casey Harkins'
+        github 'charkins'
+    }
+}
+
+/* license header */
+license {
+    ext.year = Calendar.getInstance().get(Calendar.YEAR)
+    header = project.file('NOTICE')
+    mapping {
+        java = 'SLASHSTAR_STYLE'
+    }
+}

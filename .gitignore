@@ -1,0 +1,15 @@
+# build directories
+build
+
+# gradle project cache directory
+.gradle
+
+# vim swap files
+.*.swp
+
+# eclipse project file
+.classpath
+.factorypath
+.settings
+.project
+bin
