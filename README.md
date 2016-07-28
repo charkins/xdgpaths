@@ -19,19 +19,19 @@ otherwise the HOME environment variable.
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // "/home/user"
-  XdgPaths.getInstance().home().toString()
+  XdgPaths.getInstance().home().toString();
 
   // "/home/user/foo/bar"
-  XdgPaths.getInstance().home("foo","bar").toString()
+  XdgPaths.getInstance().home("foo","bar").toString();
 
   // "/home/user/foo/bar"
-  XdgPaths.getInstance().home("foo/bar").toString()
+  XdgPaths.getInstance().home("foo/bar").toString();
 
   // "/foo/bar" (absolute path specified)
-  XdgPaths.getInstance().home("/foo/bar").toString()
+  XdgPaths.getInstance().home("/foo/bar").toString();
 
 ```
 
@@ -43,19 +43,19 @@ defaults to .cache relative to the user's home directory.
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // "/home/user/.cache"
-  XdgPaths.getInstance().cache().toString()
+  XdgPaths.getInstance().cache().toString();
 
   // "/home/user/.cache/foo/bar"
-  XdgPaths.getInstance().cache("foo","bar").toString()
+  XdgPaths.getInstance().cache("foo","bar").toString();
 
   // "/home/user/.cache/foo/bar"
-  XdgPaths.getInstance().cache("foo/bar").toString()
+  XdgPaths.getInstance().cache("foo/bar").toString();
 
   // "/foo/bar" (absolute path specified)
-  XdgPaths.getInstance().cache("/foo/bar").toString()
+  XdgPaths.getInstance().cache("/foo/bar").toString();
 
 ```
 
@@ -67,19 +67,19 @@ to .config relative to the user's home directory.
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // "/home/user/.config"
-  XdgPaths.getInstance().userconfig().toString()
+  XdgPaths.getInstance().userconfig().toString();
 
   // "/home/user/.config/foo/bar"
-  XdgPaths.getInstance().userconfig("foo","bar").toString()
+  XdgPaths.getInstance().userconfig("foo","bar").toString();
 
   // "/home/user/.config/foo/bar"
-  XdgPaths.getInstance().userconfig("foo/bar").toString()
+  XdgPaths.getInstance().userconfig("foo/bar").toString();
 
   // "/foo/bar" (absolute path specified)
-  XdgPaths.getInstance().userconfig("/foo/bar").toString()
+  XdgPaths.getInstance().userconfig("/foo/bar").toString();
 
 ```
 
@@ -91,19 +91,19 @@ to .local/share relative to the user's home directory.
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // "/home/user/.local/share"
-  XdgPaths.getInstance().userdata().toString()
+  XdgPaths.getInstance().userdata().toString();
 
   // "/home/user/.local/share/foo/bar"
-  XdgPaths.getInstance().userdata("foo","bar").toString()
+  XdgPaths.getInstance().userdata("foo","bar").toString();
 
   // "/home/user/.local/share/foo/bar"
-  XdgPaths.getInstance().userdata("foo/bar").toString()
+  XdgPaths.getInstance().userdata("foo/bar").toString();
 
   // "/foo/bar" (absolute path specified)
-  XdgPaths.getInstance().userdata("/foo/bar").toString()
+  XdgPaths.getInstance().userdata("/foo/bar").toString();
 
 ```
 
@@ -118,22 +118,22 @@ set via the system property or environment variable.
 ```java
 
   // "/var/run/user/1234"
-  System.getenv("XDG_RUNTIME_DIR")
+  System.getenv("XDG_RUNTIME_DIR");
 
   // true
-  XdgPaths.getInstance().runtime().get().isPresent()
+  XdgPaths.getInstance().runtime().get().isPresent();
 
   // "/var/run/user/1234"
-  XdgPaths.getInstance().runtime().get().toString()
+  XdgPaths.getInstance().runtime().get().toString();
 
   // "/var/run/user/1234/foo/bar"
-  XdgPaths.getInstance().runtime("foo","bar").get().toString()
+  XdgPaths.getInstance().runtime("foo","bar").get().toString();
 
   // "/var/run/user/1234/foo/bar"
-  XdgPaths.getInstance().runtime("foo/bar").get().toString()
+  XdgPaths.getInstance().runtime("foo/bar").get().toString();
 
   // "/foo/bar" (absolute path specified)
-  XdgPaths.getInstance().runtime("/foo/bar").toString()
+  XdgPaths.getInstance().runtime("/foo/bar").toString();
 
 ```
 
@@ -142,28 +142,28 @@ If XDG_RUNTIME_DIR is not set:
 ```java
 
   // null
-  System.getProperty("XDG_RUNTIME_DIR")
+  System.getProperty("XDG_RUNTIME_DIR");
 
   // null
-  System.getenv("XDG_RUNTIME_DIR")
+  System.getenv("XDG_RUNTIME_DIR");
 
   // false
-  XdgPaths.getInstance().runtime().get().isPresent()
+  XdgPaths.getInstance().runtime().get().isPresent();
 
   // null
-  XdgPaths.getInstance().runtime().get()
+  XdgPaths.getInstance().runtime().get();
 
   // false
-  XdgPaths.getInstance().runtime("foo","bar").isPresent()
+  XdgPaths.getInstance().runtime("foo","bar").isPresent();
 
   // null
-  XdgPaths.getInstance().runtime("foo","bar").get()
+  XdgPaths.getInstance().runtime("foo","bar").get();
 
   // false (absolute path not resolved if runtime is unset)
-  XdgPaths.getInstance().runtime("/foo/bar").isPresent()
+  XdgPaths.getInstance().runtime("/foo/bar").isPresent();
 
   // null (absolute path not resolved if runtime is unset)
-  XdgPaths.getInstance().runtime("/foo/bar").get()
+  XdgPaths.getInstance().runtime("/foo/bar").get();
 
 ```
 
@@ -179,31 +179,31 @@ order they are specified:
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // 2
-  XdgPaths.getInstance().config().size()
+  XdgPaths.getInstance().config().size();
 
   // "/home/user/.config"
-  XdgPaths.getInstance().config().get(0).toString()
+  XdgPaths.getInstance().config().get(0).toString();
 
   // "/etc/xdg"
-  XdgPaths.getInstance().config().get(1).toString()
+  XdgPaths.getInstance().config().get(1).toString();
 
   // 2
-  XdgPaths.getInstance().config("foo", "bar").size()
+  XdgPaths.getInstance().config("foo", "bar").size();
 
   // "/home/user/.config/foo/bar"
-  XdgPaths.getInstance().config("foo","bar").get(0).toString()
+  XdgPaths.getInstance().config("foo","bar").get(0).toString();
 
   // "/etc/xdg/foo/bar"
-  XdgPaths.getInstance().config("foo","bar").get(1).toString()
+  XdgPaths.getInstance().config("foo","bar").get(1).toString();
 
   // 1 (absolute path returns single element list)
-  XdgPaths.getInstance().config("/foo/bar").size()
+  XdgPaths.getInstance().config("/foo/bar").size();
 
   // "/foo/bar" (absolute path returns single element list)
-  XdgPaths.getInstance().config("/foo/bar").get(0).toString()
+  XdgPaths.getInstance().config("/foo/bar").get(0).toString();
 
 ```
 
@@ -219,25 +219,25 @@ in the order they are specified:
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // 3
-  XdgPaths.getInstance().data().size()
+  XdgPaths.getInstance().data().size();
 
   // "/home/user/.local/share"
-  XdgPaths.getInstance().data().get(0).toString()
+  XdgPaths.getInstance().data().get(0).toString();
 
   // "/usr/local/share"
-  XdgPaths.getInstance().data().get(1).toString()
+  XdgPaths.getInstance().data().get(1).toString();
 
   // "/usr/share"
-  XdgPaths.getInstance().data().get(2).toString()
+  XdgPaths.getInstance().data().get(2).toString();
 
   // 1 (absolute path returns single element list)
-  XdgPaths.getInstance().data("/foo/bar").size()
+  XdgPaths.getInstance().data("/foo/bar").size();
 
   // "/foo/bar" (absolute path returns single element list)
-  XdgPaths.getInstance().data("/foo/bar").get(0).toString()
+  XdgPaths.getInstance().data("/foo/bar").get(0).toString();
 
 ```
 
@@ -249,55 +249,55 @@ parameter:
 ```java
 
   // "/home/user"
-  System.getProperty("user.home")
+  System.getProperty("user.home");
 
   // 1
-  XdgPaths.getInstance().get("%home/foo").size()
+  XdgPaths.getInstance().get("%home/foo").size();
 
   // "/home/user/foo"
-  XdgPaths.getInstance().get("%home/foo").get(0)
+  XdgPaths.getInstance().get("%home/foo").get(0);
 
   // 1
-  XdgPaths.getInstance().get("%cache/foo").size()
+  XdgPaths.getInstance().get("%cache/foo").size();
 
   // "/home/user/.cache/foo"
-  XdgPaths.getInstance().get("%cache/foo").get(0)
+  XdgPaths.getInstance().get("%cache/foo").get(0);
 
   // 1
-  XdgPaths.getInstance().get("%userconfig/foo").size()
+  XdgPaths.getInstance().get("%userconfig/foo").size();
 
   // "/home/user/.config/foo"
-  XdgPaths.getInstance().get("%userconfig/foo").get(0)
+  XdgPaths.getInstance().get("%userconfig/foo").get(0);
 
   // 1
-  XdgPaths.getInstance().get("%userdata", "foo").size()
+  XdgPaths.getInstance().get("%userdata", "foo").size();
 
   // "/home/user/.local/share/foo"
-  XdgPaths.getInstance().get("%userdata", "foo").get(0)
+  XdgPaths.getInstance().get("%userdata", "foo").get(0);
 
   // 0 (%runtime returns zero element list if runtime dir not set)
-  XdgPaths.getInstance().get("%runtime", "foo").size()
+  XdgPaths.getInstance().get("%runtime", "foo").size();
 
   // 2
-  XdgPaths.getInstance().get("%config", "foo", "bar").size()
+  XdgPaths.getInstance().get("%config", "foo", "bar").size();
 
   // "/home/user/.config/foo/bar"
-  XdgPaths.getInstance().get("%config", foo","bar").get(0).toString()
+  XdgPaths.getInstance().get("%config", foo","bar").get(0).toString();
 
   // "/etc/xdg/foo/bar"
-  XdgPaths.getInstance().get("%config", "foo","bar").get(1).toString()
+  XdgPaths.getInstance().get("%config", "foo","bar").get(1).toString();
 
   // 3
-  XdgPaths.getInstance().get("%data", "foo", "bar").size()
+  XdgPaths.getInstance().get("%data", "foo", "bar").size();
 
   // "/home/user/.local/share/foo/bar"
-  XdgPaths.getInstance().get("%data", foo","bar").get(0).toString()
+  XdgPaths.getInstance().get("%data", foo","bar").get(0).toString();
 
   // "/usr/local/share/foo/bar"
-  XdgPaths.getInstance().get("%data", "foo","bar").get(1).toString()
+  XdgPaths.getInstance().get("%data", "foo","bar").get(1).toString();
 
   // "/usr/share/foo/bar"
-  XdgPaths.getInstance().get("%data", "foo","bar").get(2).toString()
+  XdgPaths.getInstance().get("%data", "foo","bar").get(2).toString();
 
 ```
 
@@ -307,16 +307,16 @@ single path:
 ```java
 
   // 1
-  XdgPaths.getInstance().get("foo/bar").size()
+  XdgPaths.getInstance().get("foo/bar").size();
 
   // "foo/bar" (relative path)
-  XdgPaths.getInstance().get("foo/bar").get(0).toString()
+  XdgPaths.getInstance().get("foo/bar").get(0).toString();
 
   // 1
-  XdgPaths.getInstance().get("/foo/bar").size()
+  XdgPaths.getInstance().get("/foo/bar").size();
 
   // "/foo/bar" (absolute path)
-  XdgPaths.getInstance().get("/foo/bar").get(0).toString()
+  XdgPaths.getInstance().get("/foo/bar").get(0).toString();
 
 ```
 
