@@ -282,7 +282,7 @@ parameter:
   XdgPaths.getInstance().get("%config", "foo", "bar").size();
 
   // "/home/user/.config/foo/bar"
-  XdgPaths.getInstance().get("%config", foo","bar").get(0).toString();
+  XdgPaths.getInstance().get("%config", "foo","bar").get(0).toString();
 
   // "/etc/xdg/foo/bar"
   XdgPaths.getInstance().get("%config", "foo","bar").get(1).toString();
@@ -291,7 +291,7 @@ parameter:
   XdgPaths.getInstance().get("%data", "foo", "bar").size();
 
   // "/home/user/.local/share/foo/bar"
-  XdgPaths.getInstance().get("%data", foo","bar").get(0).toString();
+  XdgPaths.getInstance().get("%data", "foo","bar").get(0).toString();
 
   // "/usr/local/share/foo/bar"
   XdgPaths.getInstance().get("%data", "foo","bar").get(1).toString();
